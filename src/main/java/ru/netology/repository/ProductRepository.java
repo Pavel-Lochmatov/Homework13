@@ -1,4 +1,5 @@
 package ru.netology.repository;
+
 import ru.netology.domain.NotFoundException;
 import ru.netology.domain.Product;
 
@@ -36,7 +37,7 @@ public class ProductRepository {
                 tmp[index] = product;
                 index++;
             }
-            if (findById(id) == null){
+            if (findById(id) == null) {
                 throw new NotFoundException("Element with id:" + id + "not found");
             }
         }

@@ -3,6 +3,7 @@ package ru.netology.manager;
 import ru.netology.repository.ProductRepository;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import ru.netology.domain.NotFoundException;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Product;
@@ -92,14 +93,16 @@ public class ProductManagerTest {
         Product[] actual = manager.searchBy("dar");
         assertArrayEquals(expected, actual);
     }
- // проверка удаления существующего элемента
+
+    // проверка удаления существующего элемента
     @Test
     public void shouldRemoveByIdExist() {
         repository.removeById(3);
-        Product[] expected = {book1, book2,smartphone1, smartphone2};
+        Product[] expected = {book1, book2, smartphone1, smartphone2};
         Product[] actual = repository.findAll();
         assertArrayEquals(expected, actual);
     }
+
     // проверка удаления несуществующего элемента
     @Test
     public void shouldRemoveByIdNotExist() {
